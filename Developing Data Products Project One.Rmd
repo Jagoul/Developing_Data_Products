@@ -1,0 +1,49 @@
+---
+title: |
+  | Developing Data Products - Project One
+author: "Raed Abdel Sater"
+date: "November 20, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE, results='asis'}
+library(ggplot2)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### A. Synopsis
+
+The goal of the Project is to Create a web page using R Markdown that features a map created with Leaflet.Host the webpage on either GitHub Pages, RPubs, or NeoCities.
+
+The webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+
+### B. Data Processing
+####   Downloading, Unzipping and loading Database
+
+My Current Location in Montreal next to the famous mountain of Mount Royal
+
+
+####      **Displaying Location and Printing the map**
+
+```{r}
+library(knitr)
+library(leaflet)
+library(dplyr)
+```
+
+```{r}
+   myDate <- Sys.time()
+   print(myDate)
+```
+
+```{r}
+m <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lat=45.495166, lng=-73.580299, popup="My Home, Montreal")
+  
+m  # Print the map
+```
+
+
+
